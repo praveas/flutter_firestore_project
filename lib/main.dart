@@ -14,6 +14,7 @@ https://github.com/duytq94/flutter-chat-demo.git
 
 
 import 'package:flutter/material.dart';
+import 'package:flutterfirestoreproject/login_credentials_practices/main.dart';
 
 import 'beer_messenger/model/Chat.dart';
 import 'board_firestore/board_app.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         Login.id: (context) => Login(),
         Chat.id: (context) => Chat(),
         BoardApp.id: (context) => LoginCredentials(),
+        GoogleLogin.id: (context) => GoogleLogin(),
       },
     );
   }
@@ -92,6 +94,12 @@ class MyHomePage extends StatelessWidget {
             text: "Board App",
             callback: (){
               Navigator.of(context).pushNamed(BoardApp.id);
+            },
+          ),
+          CustomButton(
+            text: "Google Logins",
+            callback: (){
+              Navigator.of(context).pushNamed(GoogleLogin.id);
             },
           )
         ],
